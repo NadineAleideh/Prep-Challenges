@@ -164,12 +164,9 @@ const applicationsStatics = (arr) => {
             }
             
        }
-            
-        
 
     else{
         result.rejectedApplicants++;
-    
    }
   
 }
@@ -308,12 +305,14 @@ const classesAvg = (data) => {
         for(let j=0;j<data.grades[i].classes.length;j++){
             for(let m=0;m<data.grades[i].classes[j].classScores.length;m++){
                 
-               sum=sum + data.grades[i].classes[j].classScores[m];
+                sum +=  data.grades[i].classes[j].classScores[m];
                counter++;
             }
             avg=sum/counter;
             
             data.grades[i].classes[j]['avg']=Math.floor(avg);
+            sum=0;
+            counter=0;
         }
         
     }
