@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Append And Delete](https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function appendAndDelete(s, t, k) {\n    // Write your code here\n    let count =0;\n    for(let i=0; i<s.length;i++){\n        if (s[i]===t[i])\n        {\n            count++;\n        }\n        else{\n            break;\n        }\n    }\n    let remcounts= s.length - count;\n    let remcountt= t.length -count ;\n    if (k>= remcounts+remcountt && (k-remcounts-remcountt)%2==0 || k>= s.length + t.length ){\n        return \"Yes\";\n    }else{\n        return \"No\";\n    }\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Encryption](https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function encryption(s) {\n    // Write your code here\n  let nospace = s.replace(/\\s/g, \"\");\n  let row = Math.floor(Math.sqrt(nospace.length));\n   let col = Math.ceil(Math.sqrt(nospace.length));\n   \n   if(row * col < nospace.length){\n       row++;\n   }\n   \n   var newstr =\"\";\n   for(let i=0; i<col; i++){\n       let jump = 0;\n       while(i+jump < nospace.length){\n           newstr+= nospace[i + jump];\n           jump+= col;\n       }\n       newstr+= \" \";\n   }\n   return newstr;\n}\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [The Time In Words](https://www.hackerrank.com/challenges/the-time-in-words/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function timeInWords(h, m) {\n    // Write your code here\n    let words = [\"zero\",\"one\",\"two\",\"three\",\"four\",\"five\",\"six\",\"seven\",\"eight\",\"nine\",\"ten\",\"eleven\",\"twelve\",\"thirteen\",\"fourteen\",\"fifteen\",\"sixteen\",\"seventeen\",\"eighteen\",\"ninteen\",\"twenty\",\"twenty one\",\"twenty two\",\"twenty three\",\"twenty four\",\"twenty five\",\"twenty six\",\"twenty seven\",\"twenty eight\",\"twenty nine\"];\n    \n  let string = !m ? `${words[h]} o' clock` : `${!(m %30) ? 'half' : !(m % 15) ? 'quarter' : `${m <= 30 ? words[m] : words[60 - m]} ${`minute${m >1 ? 's' : ''}`}`} ${m <= 30 ? 'past' : 'to'} ${words[m <= 30 ? h : h + 1]}`;\n  \n  return string;\n\n}"
+            ],
+            "outputs": []
+        }
+    ]
+}
